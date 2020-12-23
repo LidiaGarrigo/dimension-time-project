@@ -1,3 +1,4 @@
+import { GlobaltaskService } from './services/GlobaltaskService.service';
 import { DateComponent } from './users/Date/Date.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FirebaseService } from './services/firebase.service';

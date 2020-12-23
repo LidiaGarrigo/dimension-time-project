@@ -1,3 +1,4 @@
+import { HeaderComponent } from './header/header.component';
 import { DateComponent } from './Date/Date.component';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './../home/home.component';
@@ -14,7 +15,9 @@ import { TaskDetailsComponent } from './task-details/task-details.component';
     TaskListComponent,
     GlobalTasksComponent,
     TaskDetailsComponent,
-    DateComponent],
+    DateComponent,
+    HeaderComponent
+  ],
   imports: [
     CommonModule,
     RouterModule

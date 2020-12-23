@@ -4,12 +4,13 @@ import { HttpClient } from '@angular/common/http';
 import { GlobalTask } from '../Interface/global-task';
 import { Observable } from 'rxjs';
 import { tap, first } from 'rxjs/operators'
+
 @Injectable({
   providedIn: 'root'
 })
 export class GlobaltaskService {
 
-private _url: string = " http://localhost:3000/tasks";
+private _url: string = ' http://localhost:3000/tasks';
 
 constructor(private af: AngularFirestore) { }
 
