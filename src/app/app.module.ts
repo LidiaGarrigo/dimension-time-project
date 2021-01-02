@@ -1,5 +1,3 @@
-import { GlobaltaskService } from './services/GlobaltaskService.service';
-import { DateComponent } from './users/Date/Date.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FirebaseService } from './services/firebase.service';
 import { UsersModule } from './users/users.module';
@@ -15,8 +13,9 @@ import { RegisterComponent } from './register/register.component';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
-import { environment } from 'src/environments/environment';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { environments } from 'src/environments/enviroments.backup';
 
 @NgModule({
   declarations: [
@@ -31,7 +30,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     UsersModule,
     AngularFirestoreModule,
     AngularFireAuthModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule.initializeApp(environments.firebaseConfig),
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule
