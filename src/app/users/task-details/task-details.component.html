@@ -2,11 +2,10 @@
 <app-header></app-header>
 <div class="contenido">
 
-  <h1 class="subtitle is-3">TASK DETAIL</h1>
-  <p class="subtitle is-5">{{userTask?.name}}</p>
+  <h1 class="subtitle is-3">{{userTask?.name}}</h1>
   <p class="subtitle is-5">{{userTask?.description}}</p>
 
-  <h1 class="subtitle is-3">DATA</h1>
+  <h1 class="subtitle is-3">DÍA</h1>
   <app-Date></app-Date>
   <div>
     <p class="contador">{{hora}} : {{minuto}} : {{segundos}}</p>
@@ -18,10 +17,10 @@
     <button class="button is-success" (click)="pausar()">{{buttonLabel}}</button>
     <button class="button is-danger" (click)="parar()">FINALIZAR</button>
   </div>
-  <div class="resultado">
+  <div class="resultado" *ngIf='mostrar'>
     <h1>El tiempo total dedicado a esta tarea es:</h1>
   <h4>{{tiempofinal}}</h4>
   </div>
-
+  <button *ngIf='mostrar' class="button is-warning" routerLink='/task-list'>Volver</button>
 </div>
 

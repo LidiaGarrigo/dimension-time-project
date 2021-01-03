@@ -1,7 +1,6 @@
 import { FirebaseService } from './../../services/firebase.service';
 import { GlobaltaskService } from 'src/app/services/GlobaltaskService.service';
 import { GlobalTask } from './../../Interface/global-task';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { Component, OnInit } from '@angular/core';
 import { UserTaskService } from 'src/app/services/userTask.service';
 import { UserTask } from 'src/app/Interface/user-task';
@@ -14,7 +13,8 @@ import { UserTask } from 'src/app/Interface/user-task';
 export class TaskListComponent implements OnInit {
 
   collection!: UserTask[];
-  isModalActive: boolean = false;
+  GlobalTask!: GlobalTask[];
+  isModalActive = false;
 
   userTask!: UserTask;
 
@@ -22,10 +22,21 @@ export class TaskListComponent implements OnInit {
               private globalService: GlobaltaskService,
               private userTaskService: UserTaskService) { }
 
-  async ngOnInit(){
+  /* async ngOnInit(){
+  const user =  await this.fb.getUser();
+    await this.getUserTasks(user.uid);
+  } */
+  
+  ngOnInit() {
+    this.globalService.getGlobalTasks$().subscribe(data => this.GlobalTask = data);
+    this.uid();
+  }
+
+  async uid(){
   const user =  await this.fb.getUser();
     await this.getUserTasks(user.uid);
   }
+
   onLogout(){
     this.fb.logout();
   }

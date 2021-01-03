@@ -7,4 +7,5 @@ export interface UserTask {
   id?: string;
   name?: string;
   description?: string;
+  status?: string;
 }
